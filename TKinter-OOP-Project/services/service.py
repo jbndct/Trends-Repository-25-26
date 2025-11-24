@@ -5,14 +5,14 @@ class WrestlerService:
   def __init__(self):
     self.repo = WrestlerRepository()
 
-  def add_wrestler(self, name, age):
+  def add_wrestler(self, name, popularity):
     if not name:
       raise ValueError("Name cannot be empty.")
     
-    if age <=0:
-      raise ValueError("Age must be a positive integer.")
+    if popularity <=0:
+      raise ValueError("Popularity must be a positive integer.")
     
-    wrestler = Wrestler(name=name, age=age)
+    wrestler = Wrestler(name=name, popularity=popularity)
     self.repo.create(wrestler)
   
   def list_wrestlers(self):

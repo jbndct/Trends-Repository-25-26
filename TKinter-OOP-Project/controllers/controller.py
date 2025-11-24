@@ -7,8 +7,8 @@ class WrestlerController:
 
   def on_add_wrestler(self):
     name = self.view.get_name()
-    age = self.view.get_age()
-    self.service.add_wrestler(name, age)
+    popularity = self.view.get_popularity()
+    self.service.add_wrestler(name, popularity)
     self.view.show_message("Wrestler added!")
 
   def on_load_wrestler(self):

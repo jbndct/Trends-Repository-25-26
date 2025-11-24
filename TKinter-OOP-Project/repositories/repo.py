@@ -1,12 +1,12 @@
 from core.db import DB
-from models.model import Wrestler
+from models.model import Wrestler, Move, Match, Signature, Finisher 
 
 class WrestlerRepository:
   def create(self, wrestler: Wrestler):
     conn = DB.get_conn()
     cursor = conn.cursor()
-    cursor.execute("INSERT INTO wrestlers (name, age) VALUES (%s, %s)",
-                  (wrestler.name, wrestler.age)
+    cursor.execute("INSERT INTO wrestlers (name, popularity) VALUES (%s, %s)",
+                  (wrestler.name, wrestler.popularity)
     )
     conn.commit()
     conn.close()
